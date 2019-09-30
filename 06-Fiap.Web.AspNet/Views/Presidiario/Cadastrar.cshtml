@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+@model Presidiario
+
+<h1>Cadastrar Presidiario</h1>
+
+@TempData["msg"]
+
+<form asp-action="cadastrar">
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataEntrada"></label>
+        <input asp-for="DataEntrada" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DataSaida"></label>
+        <input asp-for="DataSaida" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NivelEscolaridade"></label>
+        <select asp-for="NivelEscolaridade" asp-items="@Html.GetEnumSelectList<NivelEscolaridade>()" class="form-control">
+            <option>Selecione</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="SaidaTemporaria"></label>
+        <input asp-for="SaidaTemporaria" class="form-control" />
+    </div>
+    <fieldset>
+        <legend>Cela</legend>
+    </fieldset>
+    <div class="form-group">
+        <label asp-for="Cela"></label>
+        <select asp-for="CelaId" class="form-control"
+                asp-items="@ViewBag.celas">
+            <option value="0">Selecione</option>
+        </select>
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-success" />
+</form>
+

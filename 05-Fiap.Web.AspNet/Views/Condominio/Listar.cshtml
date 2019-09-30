@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Listar";
+}
+
+
+<h1>Condominios</h1>
+
+<mensagem texto="@TempData["mensagem"]"></mensagem>
+
+<form asp-action="Listar" class="mt-5 form-inline">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Digite o nome" name="termoPesquisa" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="ml-2 btn btn-secondary" value="Buscar" />
+    </div>
+</form>
+
+
+<table class="mt-5 table">
+    <tr>
+        <th>Nome</th>
+        <th>Bloco</th>
+        <th>Ativo</th>
+        <th>Tipo</th>
+        <th>Nome Sindico</th>
+        <th>Email Sindico</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Blocos</td>
+            <td>@(item.Ativo ? "Sim" : "Não")</td>
+            <td>@item.Tipo</td>
+            <td>@item.Sindico.Nome</td>
+            <td>@item.Sindico.Email</td>
+            <td>
+                <a class="btn btn-outline-secondary btn-sm" asp-action="Editar" asp-route-id="@item.CondominioId">Editar</a>
+                <button data-toggle="modal" data-target="#removeModal" class="btn btn-outline-danger btn-sm" onclick="codigo.value = @item.CondominioId">Excluir</button>
+                <a class="btn btn-outline-info btn-sm" asp-action="Listar" asp-controller="Imovel" asp-route-idBusca="@item.CondominioId">Imóveis</a>
+            </td>
+           
+        </tr>
+    }
+</table>
+
+<div class="modal" id="removeModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Condominio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir o condominio?</p>
+            </div>
+            <div class="modal-footer">
+                <form asp-action="Excluir">
+                    <input type="hidden" name="id" id="codigo" />
+                    <button type="submit" class="btn btn-outline-secondary" data-dismiss="modal">Não</button>
+                    <button type="submit" class="btn btn-danger">Sim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

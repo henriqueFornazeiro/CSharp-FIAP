@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Listar";
+}
+
+@model  IList<Cela>
+
+<h1>Celas</h1>
+
+<table class="table">
+    <tr>
+        <th>Nome</th>
+        <th>Área</th>
+        <th>Quantidade Máxima</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Nome</td>
+        <td>@item.AreaUtil</td>
+        <td>@item.QuantMaxima</td>
+        <td>
+            <a asp-action="detalhar"
+               asp-route-codigo="@item.CelaId" class="btn btn-primary">
+                Detalhes
+            </a>
+        </td>
+    </tr>
+    }
+
+</table>
+
+

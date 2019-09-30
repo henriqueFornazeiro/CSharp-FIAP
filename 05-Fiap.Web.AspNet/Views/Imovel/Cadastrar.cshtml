@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model  Imovel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar Imóvel</title>
+</head>
+<body>
+    <mensagem texto="@TempData["mensagem"]"></mensagem>
+    <form class="form" asp-action="cadastrar" asp-controller="imovel">
+        <div class="form-group">
+            <label asp-for="Numero"></label>
+            <input asp-for="Numero" type="text" class="form-control" name="numero" />
+        </div>
+        <div class="form-group">
+            <label asp-for="AreaUtil"></label>
+            <input asp-for="AreaUtil" type="text" class="form-control" name="areaUtil" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Condominio"></label>
+            <select asp-for="CondominioId" class="form-control"
+                    asp-items="@ViewBag.condominios">
+                <option value="0">Selecione</option>
+            </select>
+        </div>
+        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+    </form>
+</body>
+</html>
