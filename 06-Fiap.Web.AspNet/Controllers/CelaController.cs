@@ -61,6 +61,15 @@ namespace _06_Fiap.Web.AspNet.Controllers
                 Ocupacao = (presidiarios.Count * 100) / cela.QuantMaxima
             };
             return View(viewModel);
+        }   
+
+        [HttpPost]
+        public IActionResult PermitirSaida(int codigo)
+        {
+            Presidiario presidiario = _presidiarioRepository.BuscarPorCodigo(codigo);
+            presidiario.SaidaTemporaria = true;
+            
+            return RedirectToAction("Detalhar");
         }
 
     }

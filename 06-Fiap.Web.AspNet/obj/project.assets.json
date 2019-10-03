@@ -12934,23 +12934,26 @@
   },
   "packageFolders": {
     "C:\\Users\\logonrmlocal\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\01-Fiap.HelloWorld\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
+      "projectUniqueName": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
       "projectName": "06-Fiap.Web.AspNet",
-      "projectPath": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\01-Fiap.HelloWorld\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
+      "projectPath": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\06-Fiap.Web.AspNet\\06-Fiap.Web.AspNet.csproj",
       "packagesPath": "C:\\Users\\logonrmlocal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\01-Fiap.HelloWorld\\06-Fiap.Web.AspNet\\obj\\",
+      "outputPath": "C:\\Users\\logonrmlocal\\Desktop\\CSharp-FIAP\\06-Fiap.Web.AspNet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\logonrmlocal\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -12996,10 +12999,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
